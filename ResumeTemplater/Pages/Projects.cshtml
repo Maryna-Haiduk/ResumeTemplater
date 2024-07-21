@@ -11,23 +11,29 @@
 	</div>
 </div>
 
-<div class="container">
-	<div class="project-container">
-		<h4 class="project-title general-header">
-			<!--  Project Title -->
-		</h4>
-		<p class="project-year general-header">
-			<!--  Project Year -->
-		</p>
-		<p class="project-description general-content">
-			<!--  Project Description -->
-		</p>
-	</div>
 
-	<br>
-	<h4 class="general-header">Portfolio</h4>
+@foreach (var project in Model.Projects)
+{
+	@if (project.Year > 2017)
+	{
+		<div class="container">
+			<div class="project-container">
+				<h4 class="project-title general-header">
+					@project.Title<!--  Project Title -->
+				</h4>
+				<p class="project-year general-header">
+					@project.Year<!--  Project Year -->
+				</p>
+				<p class="project-description general-content">
+					@project.Description<!--  Project Description -->
+				</p>
+			</div>
+			<br>
+			@* <h4 class="general-header">Portfolio</h4>
 	<p class="general-content">
-		<!-- Render partial for Link below -->
+	<!-- Render partial for Link below -->
 	</p>
-	<br>
-</div>
+	<br> *@
+		</div>
+	}
+}

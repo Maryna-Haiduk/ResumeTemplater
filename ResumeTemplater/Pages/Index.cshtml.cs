@@ -21,14 +21,8 @@ namespace ResumeTemplater.Pages
             Languages = new List<string>() 
             {
                 "English",
-				"Spanish",
-				"French",
 				"Russian",
-				"Mandarin",
-				"Hindi",
-				"Ukrainian",
-				"Modern Standard Arabic",
-				"Bengali"
+				"Ukrainian"
 			};
         }
     }
