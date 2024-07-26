@@ -4,36 +4,80 @@
 @model Index1Model
 @{
 	// Add ViewData Title below
+	ViewData["Title"] = "Home";
 }
 
 
-<div class="jumbotron jumbotron-fluid jumbotron-container resume-jumbotron text-black">
-	<div class="container-fluid jumbotron-content">
-		<p class="text-center jumbotron-header mb-4">Hey there, I'm <!-- Your name here -->@Model.FullName!</p>
-	</div>
-</div>
-
 
 <div class="container">
+	<h1>Hey there, I'm @Model.FullName!</h1>
+	<h2>.NET / C# Software Developer</h2>
+</div>
+
+<br />
+<div class="container">
 	<div class="resume-content">
-		<h4 class="general-header mb-3">Summary:</h4>
-		<p class="general-content mb-3">I'm an enthusiastic software engineer with <!-- Years of experience -->+ years of experience participating in the complete lifecyclye of successfully launched applications. I am skilled in developing business plans, requirements specifications, user documentation, and architectural systems research. Strong written and verbal communications.</p>
+		<h4>Professional Profile</h4>
+		<ul>
+			@foreach (var item in Model.ProfessionalProfile)
+			{
+				<li>@item</li>
+			}
+		</ul>
 	</div>
+	
+	<br />
 
 	<div class="resume-content">
-		<h4 class="general-header mb-3">Languages:</h4>
-		<ul class="list-group general-content">
-			@foreach (string language in Model.Languages)
+		<h4>Technical Skills</h4>
+		<ul>
+			@foreach (var item in Model.Technologies)
 			{
-				<li class="list-item" style="width: 18rem;">@language</li>
+				<li><strong>@item.Key: </strong>
+					@for (int i = 0; i < item.Value.Count; i++)
+					{
+						if(i == item.Value.Count - 1)
+						{
+							<span>@item.Value[i]</span>
+						}
+						else
+						{
+							<span>@item.Value[i], </span>
+						}
+					}
+				</li>
 			}
 		</ul>
 	</div>
 
+	<br />
 	<div class="resume-content">
-		<h4 class="general-header mb-3">Contact</h4>
+		<h4>Core Competencies</h4>
+		<ul>
+			@foreach (var competency in Model.CoreCompetencies)
+			{
+				<li>@competency</li>
+			}
+		</ul>
+
+	</div>
+
+	<br />
+	<div>
+		<h4>Languages</h4>
+		<ul>
+			@foreach (string language in Model.Languages)
+			{
+				<li>@language</li>
+			}
+		</ul>
+		
+	</div>
+	<div class="resume-content">
 		<p class="general-content">
-			<!-- Render partial for Link below -->
+			For more information about me, please refer to my
+			<partial name="_Links" for="@Model.LinkedInUsername"></partial>
 		</p>
 	</div>
 </div>
+<br />

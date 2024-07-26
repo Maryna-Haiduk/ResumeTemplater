@@ -1,0 +1,24 @@
+﻿@page
+@model ResumeTemplater.Pages.ExperienceModel
+@{
+    ViewData["Title"] = "Experience";
+}
+
+<div class="container">
+
+</div>
+
+<div class="container">
+    <h1>Professional Experience</h1>
+    @foreach(var e in @Model.ExperienceList)
+    {
+        <h3>@e.Title</h3>
+        <p><i>@e.Years</i></p>
+        <ul>
+            @foreach (var d in @e.Descriptions)
+            {
+                <li>@d</li>
+            }
+        </ul>
+    };
+</div>

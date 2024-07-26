@@ -12,7 +12,7 @@
 	<header>
 		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 			<div class="container">
-				<a class="navbar-brand justify-content-start" asp-area="" asp-page="/Index">ResumeTemplater</a>
+				<a class="navbar-brand justify-content-start" asp-area="" asp-page="/Index">Home</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
 						aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -21,11 +21,17 @@
 					<ul class="navbar-nav flex-grow-1 justify-content-end">
 						<li class="nav-item">
 							<!-- Anchor link below, replace the "href" attribute -->
-							<a class="nav-link text-dark" href="/Index">Home</a>
+ 							
+		
+							<a class="nav-link text-dark" asp-page="Index">About Me</a>
 						</li>
 						<li class="nav-item">
 							<!-- Anchor link below, replace the "href" attribute -->
-							<a class="nav-link text-dark" href="/Projects">Projects</a>
+							
+							<a class="nav-link text-dark" asp-page="Experience">Experience</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-page="Contacts">Contacts</a>
 						</li>
 					</ul>
 				</div>
@@ -34,8 +40,9 @@
 	</header>
 	@RenderBody()
 	<footer class="border-top footer text-muted">
+		<br />
 		<div class="container">
-			&copy; 2020 - ResumeTemplater - <a asp-page="/Privacy">Privacy</a>
+			<a href="https://github.com/Maryna-Haiduk/ResumeTemplater" target="_blank">Open-source code</a> by Maryna Haiduk
 		</div>
 	</footer>
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>

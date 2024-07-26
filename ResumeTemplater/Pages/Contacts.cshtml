@@ -1,0 +1,28 @@
+﻿@page
+@model ResumeTemplater.Pages.ContactsModel
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+<div class="container">
+    <h1>Contacts</h1>
+</div>
+
+<div class="container">
+    <ul>
+        <li><strong>Maryna Haiduk</strong></li>
+        <li><strong>Email: </strong>@Model.Email</li>
+        <li><strong>Phone: </strong>@Model.PhoneNumber</li>
+        <li>
+            <a href="https://www.linkedin.com/in/maryna-haiduk-3a7644227/" target="_blank">LinkedIn</a>
+        </li>
+        <li>
+            <a href="https://github.com/Maryna-Haiduk" target="_blank">GitHub</a>
+        </li>
+        <li>
+            <a href="https://bitbucket.org/submarina005/workspace/repositories/" target="_blank">Bitbucket</a>
+        </li>
+    </ul>
+</div>
+<br />
+
