@@ -17,6 +17,8 @@ namespace ResumeTemplater.Pages
         public Dictionary<string, List<string>> Technologies { get; set; }
         public List<string> CoreCompetencies { get; set; }
 		public List<string> Languages { get; set; }
+
+        public List<Education> Educations { get; set; }
 		public void OnGet()
         {
             FullName = "Maryna Haiduk";
@@ -61,6 +63,13 @@ namespace ResumeTemplater.Pages
 				"Ukrainian"
 			};
 
+            Educations = new List<Education>()
+            {
+                new Education ("HappyArray", "Software development course - ASP.Net MVC, C#, MS SQL, SQL, HTML, CSS, JavaScript"),
+                new Education ("Codecademy", "Programming courses - SQL, C#, ASP.Net"),
+                new Education ("SheCodes", "Coding workshop - HTML, CSS, JavaScript"),
+                new Education ("Ukrainian National Tchaikovsky Academy of Music, Kyiv, Ukraine ", " Ph.D. in Musicology, Master’s in Musicology, Bachelor's in Musicology")
+            };
 		}
     }
 }

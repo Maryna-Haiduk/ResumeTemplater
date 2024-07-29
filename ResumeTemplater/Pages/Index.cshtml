@@ -71,8 +71,18 @@
 				<li>@language</li>
 			}
 		</ul>
-		
 	</div>
+
+	<div class="container">
+		<h4>Education</h4>
+		<ul>
+			@foreach (var item in Model.Educations)
+			{
+				<li><strong>@item.Name - </strong>@item.Description</li>
+			}
+		</ul>
+	</div>
+	<br />
 	<div class="resume-content">
 		<p class="general-content">
 			For more information about me, please refer to my
